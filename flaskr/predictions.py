@@ -46,7 +46,7 @@ def predict():
         
 
         return render_template('predictions/index.html',
-        filename = local_file_name,predictionresults = results.prediction)
+        filename = local_file_name,predictionresults = results.predictions)
 
     return render_template('predictions/predict.html')
 
