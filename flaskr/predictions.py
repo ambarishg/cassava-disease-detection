@@ -16,7 +16,7 @@ from msrest.authentication import ApiKeyCredentials
 
 bp = Blueprint('predictions', __name__)
 
-@bp.route('/predict', methods=('GET', 'POST'))
+@bp.route('/', methods=('GET', 'POST'))
 def predict():
     if request.method == 'POST':
         local_file_name =  request.files["filename"].filename
@@ -50,6 +50,6 @@ def predict():
 
     return render_template('predictions/predict.html')
 
-@bp.route('/')
+@bp.route('/predictions')
 def index():
     return render_template('predictions/index.html')
