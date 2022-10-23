@@ -28,7 +28,6 @@ def get_or_create_db(client, database_name):
 def get_or_create_container(database_obj, container_name):
     try:        
         todo_items_container = database_obj.get_container_client(container_name)
-        todo_items_container.read()   
         return todo_items_container
     except exceptions.CosmosResourceNotFoundError:
         print("Creating container with lastName as partition key")
@@ -50,14 +49,14 @@ def create_item(item_to_create):
     database_name = kvutils.cosmosdb_database_name 
     container_name = kvutils.cosmosdb_container_name 
     # </define_database_and_container_name>
-    with cosmos_client(endpoint, credential = key) as client:
+    client = cosmos_client(endpoint, credential = key) 
 
-        database_obj = get_or_create_db(client, database_name)
-        # create a container
-        container_obj = get_or_create_container(database_obj, container_name)
-            
-        # populate the family items in container
-        populate_container_items(container_obj, item_to_create)  
+    database_obj = get_or_create_db(client, database_name)
+    # create a container
+    container_obj = get_or_create_container(database_obj, container_name)
+        
+    # populate the family items in container
+    populate_container_items(container_obj, item_to_create)  
         
 def get_all_items():
     # <add_uri_and_key>
@@ -69,16 +68,16 @@ def get_all_items():
     database_name = kvutils.cosmosdb_database_name 
     container_name = kvutils.cosmosdb_container_name 
     # </define_database_and_container_name>
-    with cosmos_client(endpoint, credential = key) as client:
+    client = cosmos_client(endpoint, credential = key) 
 
-        database_obj = get_or_create_db(client, database_name)
-        # create a container
-        container_obj = get_or_create_container(database_obj, container_name)
+    database_obj = get_or_create_db(client, database_name)
+    # create a container
+    container_obj = get_or_create_container(database_obj, container_name)
 
-        allitems = []
-        for item in container_obj.query_items(
-        query='SELECT * FROM predictions'):
-            allitems.append(item)
-        
-        return(allitems)
+    allitems = []
+    for item in container_obj.query_items(
+    query='SELECT * FROM predictions'):
+        allitems.append(item)
+    
+    return(allitems)
             
