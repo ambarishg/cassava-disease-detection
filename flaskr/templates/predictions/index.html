@@ -16,7 +16,7 @@
     <article class="post">
       
       <p class="body">{{ prediction.tag_name }} : 
-        {{ round(prediction.probability * 100,3) }}
+        {{ prediction.probability }}
       </p>
     </article>
 {% endfor %}
