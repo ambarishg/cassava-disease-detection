@@ -12,7 +12,7 @@
   All Predictions in Percentages
 </p>
 <table>
-  
+    <th>filename</th>
     <th>cbb</th>
     <th>cbsd</th>
     <th>cgm</th>
@@ -21,6 +21,7 @@
   
 {% for prediction in allitems %}
      <tr class="body">
+          <td>{{ prediction["filename"]}} </td> 
           <td>{{ prediction["cbb"]}} </td> 
           <td>{{ prediction["cbsd"]}} </td>
           <td>{{ prediction["cgm"]}} </td>
