@@ -1,7 +1,5 @@
-from azure.cosmos.aio import CosmosClient as cosmos_client
+from azure.cosmos import CosmosClient as cosmos_client
 from azure.cosmos import PartitionKey, exceptions
-
-import asyncio
 
 from . import kvutils
 
