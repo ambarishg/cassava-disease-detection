@@ -8,17 +8,26 @@
 {% endblock %}
 
 {% block content %}
-
+<p>
+  All Predictions in Percentages
+</p>
+<table>
+  
+    <th>cbb</th>
+    <th>cbsd</th>
+    <th>cgm</th>
+    <th>cmd</th>
+    <th>healthy</th>
+  
 {% for prediction in allitems %}
-    <article class="post">
-      
-      <p class="body">
-        
-        {{ prediction["cbb"]}}  :
-        {{ prediction["healthy"]}} 
-
-      </p>
-    </article>
+     <tr class="body">
+          <td>{{ prediction["cbb"]}} </td> 
+          <td>{{ prediction["cbsd"]}} </td>
+          <td>{{ prediction["cgm"]}} </td>
+          <td>{{ prediction["cmd"]}} </td>
+          <td>{{ prediction["healthy"]}}<td> 
+     </tr>
+     
 {% endfor %}
-
+</table>
 {% endblock %}
