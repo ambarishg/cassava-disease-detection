@@ -8,13 +8,17 @@
 {% endblock %}
 
 {% block content %}
+<header>
+  <p class="body">Prediction for {{ filename }}</p>
+</header>
 
+{% for prediction in predictionresults %}
     <article class="post">
-      <header>
- 
-      </header>
-      <p class="body">{{ filename }}</p>
+      
+      <p class="body">{{ prediction.tag_name }} : 
+        {{ round(prediction.probability * 100,3 }}
+      </p>
     </article>
- 
+{% endfor %}
 
 {% endblock %}

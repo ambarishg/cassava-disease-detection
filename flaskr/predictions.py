@@ -8,6 +8,12 @@ import os
 from . import kvutils
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 
+from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
+from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
+from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateBatch, ImageFileCreateEntry, Region
+from msrest.authentication import ApiKeyCredentials
+
+
 bp = Blueprint('predictions', __name__)
 
 @bp.route('/predict', methods=('GET', 'POST'))
@@ -25,8 +31,22 @@ def predict():
         blob=local_file_name)
         blob_client.upload_blob(bytes_data)
 
+        ENDPOINT = kvutils.ENDPOINT
+        prediction_key = kvutils.prediction_key
+        prediction_resource_id = "paddy"
+        project_id = kvutils.project_id
+        publish_iteration_name = kvutils.publish_iteration_name
+
+         # Now there is a trained endpoint that can be used to make a prediction
+        prediction_credentials = ApiKeyCredentials(in_headers={"Prediction-key": prediction_key})
+        predictor = CustomVisionPredictionClient(ENDPOINT, prediction_credentials)
+
+        results = predictor.classify_image(
+                project_id, publish_iteration_name, bytes_data)
+        
+
         return render_template('predictions/index.html',
-        filename = local_file_name)
+        filename = local_file_name,predictionresults = results.prediction)
 
     return render_template('predictions/predict.html')
 
