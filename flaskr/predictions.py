@@ -13,7 +13,7 @@ from azure.cognitiveservices.vision.customvision.prediction import CustomVisionP
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateBatch, ImageFileCreateEntry, Region
 from msrest.authentication import ApiKeyCredentials
 
-from . import cosmosdb
+from . import cosmosdbwithoutasync
 import asyncio
 import json
 
@@ -56,10 +56,7 @@ def predict():
         for prediction in results.predictions:
             result_dict[prediction.tag_name] = round(prediction.probability * 100,3)
 
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop) 
-    
-        loop.run_until_complete(cosmosdb.create_item(result_dict))
+        cosmosdbwithoutasync.create_item(result_dict)
         
 
         return render_template('predictions/index.html',
@@ -74,8 +71,6 @@ def index():
 
 @bp.route('/allitems')
 def allitems():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop) 
-    
-    results = loop.run_until_complete(cosmosdb.get_all_items())
+   
+    results = cosmosdbwithoutasync.get_all_items()
     return render_template('predictions/allitems.html',allitems = results)
