@@ -15,8 +15,8 @@
 {% for prediction in predictionresults %}
     <article class="post">
       
-      <p class="body">{{ prediction.tag_name }} : 
-        {{ prediction.probability }}
+      <p class="body">
+        {{ prediction.tag_name }} : {{ prediction.probability }}
       </p>
     </article>
 {% endfor %}

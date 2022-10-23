@@ -4,7 +4,7 @@ from flask import (
 
 from werkzeug.exceptions import abort
 
-import os
+import os, time, uuid
 from . import kvutils
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 
@@ -12,6 +12,10 @@ from azure.cognitiveservices.vision.customvision.training import CustomVisionTra
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateBatch, ImageFileCreateEntry, Region
 from msrest.authentication import ApiKeyCredentials
+
+import cosmosdb
+import asyncio
+import json
 
 
 bp = Blueprint('predictions', __name__)
@@ -43,10 +47,24 @@ def predict():
 
         results = predictor.classify_image(
                 project_id, publish_iteration_name, bytes_data)
+
+        result_dict ={}
+        result_dict["category"] = "cassava"
+        result_dict["filename"] = local_file_name
+        result_dict["id"] = 'cassava_' + str(uuid.uuid4())
+
+        for prediction in results.predictions:
+            result_dict[prediction.tag_name] = round(prediction.probability * 100,3)
+
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop) 
+    
+        loop.run_until_complete(cosmosdb.create_item(result_dict))
         
 
         return render_template('predictions/index.html',
-        filename = local_file_name,predictionresults = results.predictions)
+        filename = local_file_name,
+        predictionresults = results.predictions)
 
     return render_template('predictions/predict.html')
 

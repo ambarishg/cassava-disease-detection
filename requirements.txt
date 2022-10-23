@@ -3,3 +3,5 @@ azure-identity
 azure-keyvault-secrets
 azure-storage-blob 
 azure-cognitiveservices-vision-customvision
+azure-cosmos
+aiohttp
