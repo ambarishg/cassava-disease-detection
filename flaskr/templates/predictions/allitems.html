@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}All Predictions{% endblock %}</h1>
+  
+    <a class="action" href="{{ url_for('predictions.predict') }}">Predict</a>
+  
+{% endblock %}
+
+{% block content %}
+
+{% for prediction in allitems %}
+    <article class="post">
+      
+      <p class="body">
+        {{ prediction }}
+      </p>
+    </article>
+{% endfor %}
+
+{% endblock %}

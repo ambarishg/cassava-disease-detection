@@ -2,7 +2,10 @@
 
 {% block header %}
   <h1>{% block title %}Predict Cassava Leaf{% endblock %}</h1>
+  <a class="action" href="{{ url_for('predictions.allitems') }}">All Predictions</a>
 {% endblock %}
+
+
 
 {% block content %}
   <form method="post" enctype = "multipart/form-data">

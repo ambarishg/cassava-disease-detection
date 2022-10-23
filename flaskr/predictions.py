@@ -71,3 +71,11 @@ def predict():
 @bp.route('/predictions')
 def index():
     return render_template('predictions/index.html')
+
+@bp.route('/allitems')
+def allitems():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop) 
+    
+    results = loop.run_until_complete(cosmosdb.get_all_items())
+    return render_template('predictions/allitems.html',allitems = results)

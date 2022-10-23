@@ -60,3 +60,26 @@ async def create_item(item_to_create):
         # populate the family items in container
         await populate_container_items(container_obj, item_to_create)  
         
+async def get_all_items():
+    # <add_uri_and_key>
+    endpoint = kvutils.cosmosdb_endpoint 
+    key = kvutils.cosmosdb_key 
+    # </add_uri_and_key>
+
+    # <define_database_and_container_name>
+    database_name = kvutils.cosmosdb_database_name 
+    container_name = kvutils.cosmosdb_container_name 
+    # </define_database_and_container_name>
+    async with cosmos_client(endpoint, credential = key) as client:
+
+        database_obj = await get_or_create_db(client, database_name)
+        # create a container
+        container_obj = await get_or_create_container(database_obj, container_name)
+
+        allitems = []
+        for item in container_obj.query_items(
+        query='SELECT * FROM predictions'):
+            allitems.append(item)
+        
+        return(allitems)
+            
