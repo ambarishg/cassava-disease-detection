@@ -3,7 +3,7 @@ from azure.cosmos import PartitionKey, exceptions
 
 import asyncio
 
-import kvutils 
+from . import kvutils
 
 # <method_populate_container_items>
 async def populate_container_items(container_obj, item_to_create):

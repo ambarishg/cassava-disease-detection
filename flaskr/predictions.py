@@ -13,7 +13,7 @@ from azure.cognitiveservices.vision.customvision.prediction import CustomVisionP
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateBatch, ImageFileCreateEntry, Region
 from msrest.authentication import ApiKeyCredentials
 
-import cosmosdb
+from . import cosmosdb
 import asyncio
 import json
 
