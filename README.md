@@ -32,7 +32,20 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 |  __init__.py | Has the code for initialization for the Flask App |      
 |  app.py | Has the code for running the Flask app |      
 |  templates folder | Folder containing the Views of the Container App   |        
-|  static folder | Folder containing the CSS file   |        
+|  static folder | Folder containing the CSS file   |     
+
+## Images     
+
+|  FileName  |  Description |
+|---|---|
+| docs\images\CassavaDiseaseApplication folder |    Contains the Images of the Cassava Application          |     
+| docs\images\ContainerApp folder |    Contains the Images of the Container App Configuration with      
+1. Storage Account  - Storage Data Blob Contributor Role 
+2. Key Vault - Access Polices to acess the Key Vault Secrets 
+
+    
+          |    
+
 
 
 
