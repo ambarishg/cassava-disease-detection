@@ -12,13 +12,8 @@ We have taken 105 images for 4 leaf disease categories and a healthy category. T
 The Cassava Leaf Disease detection system would help the farmers to detect the disease correctly and take preventive measures for the same.       
 
 ### Deployment Instructions     
-
-
-|  FileName  |  Description |
-|---|---|
-| 01-DockerSteps.md |   Step 1 : Steps for building the Docker Image        |
-|  02-AzureContainerAppsSteps.md | Step 2 :Steps for deploying the image as a Container App in Azure   |           
-
+Step 1 : Steps for building the Docker Image [ 01-DockerSteps.md ]   
+Step 2 : Steps for deploying the image as a Container App in Azure [ AzureContainerAppsSteps.md ]  
 Step 3 : Turn the Managed identity [System Assigned] for the deployed Container App     
 Step 4 : Create the Storage Account and the Container       
 Step 5 : Create the CosmosDB account , database and container. The partition of the container is **category**               
