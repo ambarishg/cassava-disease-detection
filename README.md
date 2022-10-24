@@ -11,3 +11,5 @@ As the 2nd largest provider of carbohydrates in Africa, cassava is a key food se
 We have taken 105 images for 4 leaf disease categories and a healthy category. Therefore, we have 5 categories of leaves.            
 The Cassava Leaf Disease detection system would help the farmers to detect the disease correctly and take preventive measures for the same.       
 
+### Successful predictions
+image.png
