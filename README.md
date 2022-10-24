@@ -13,8 +13,8 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 
 ### Deployment Instructions [ Steps ]     
 1.  Create the Custom Vision AI project for training the Cassava Leaf images            
-2.  Steps for building the Docker Image [ 01-DockerSteps.md ]   
-3.  Steps for deploying the image as a Container App in Azure [ AzureContainerAppsSteps.md ]  
+2.  Steps for building the Docker Image [ `docs/01-DockerSteps.md` ]   
+3.  Steps for deploying the image as a Container App in Azure [ `docs/2-AzureContainerAppsSteps.md` ]  
 4.  Turn the Managed identity [System Assigned] for the deployed Container App     
 5.  Create the Storage Account and the Container       
 6.  Create the CosmosDB account , database and container. The partition of the container is **category**               
