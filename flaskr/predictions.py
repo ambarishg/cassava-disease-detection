@@ -26,8 +26,6 @@ def predict():
         local_file_name =  request.files["filename"].filename
         bytes_data = request.files["filename"].read()
 
-        full_file_name = account_url + "/" + container_name + "/" + local_file_name
-                
         credential = kvutils.credential
         account_url = kvutils.account_url 
         container_name = kvutils.container_name 
@@ -36,6 +34,8 @@ def predict():
         blob_client = blob_service_client.get_blob_client(container=container_name, 
         blob=local_file_name)
         blob_client.upload_blob(bytes_data)
+
+        full_file_name = account_url + "/" + container_name + "/" + local_file_name
 
         ENDPOINT = kvutils.ENDPOINT
         prediction_key = kvutils.prediction_key
