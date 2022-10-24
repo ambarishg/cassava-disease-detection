@@ -16,8 +16,14 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 
 |  FileName  |  Description |
 |---|---|
-| 01-DockerSteps.md |   Steps for building the Docker Image        |
-|  02-AzureContainerAppsSteps.md | Steps for deploying the image as a Container App in Azure   |         
+| 01-DockerSteps.md |   Step 1 : Steps for building the Docker Image        |
+|  02-AzureContainerAppsSteps.md | Step 2 :Steps for deploying the image as a Container App in Azure   |           
+
+Step 3 : Turn the Managed identity [System Assigned] for the deployed Container App     
+Step 4 : Create the Storage Account and the Container       
+Step 5 : Create the CosmosDB account , database and container. The partition of the container is **category**               
+Step 6 : Assign Storage Data Blob Contributor Role to the Container App  for the Storage Account so that the Container App can read,write and delete the images in the Storage Account                   
+Step 7 : Assign Access Policies for the Container App so that the Container App can acess the secrets in the KeyVault
 
 ## Images of the **Azure Container App**           
 |  FileName  |  Description |
