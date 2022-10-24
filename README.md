@@ -41,10 +41,7 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 | docs\images\CassavaDiseaseApplication folder |    Contains the Images of the Cassava Application          |     
 | docs\images\ContainerApp folder |    Contains the Images of the Container App Configuration with      
 1. Storage Account  - Storage Data Blob Contributor Role 
-2. Key Vault - Access Polices to acess the Key Vault Secrets 
-
-    
-          |    
+2. Key Vault - Access Polices to acess the Key Vault Secrets           | 
 
 
 
