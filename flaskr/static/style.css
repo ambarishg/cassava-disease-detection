@@ -33,6 +33,10 @@ table {
   width:100%
 }
 
+th, td {
+	border: 1px solid black;
+}
+
 thead th {
   width: 25%;
 }
