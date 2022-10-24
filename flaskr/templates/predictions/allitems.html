@@ -13,12 +13,14 @@
 </p>
 <table>
     <thead>
-    <tr>filename</tr>
-    <tr>cbb</tr>
-    <tr>cbsd</tr>
-    <tr>cgm</tr>
-    <tr>cmd</tr>
-    <tr>healthy</tr>
+    <tr>
+    <th>filename</th>
+    <th>cbb</th>
+    <th>cbsd</th>
+    <th>cgm</th>
+    <th>cmd</th>
+    <th>healthy</th>
+    </tr>
     </thead>
   
 {% for prediction in allitems %}
@@ -30,11 +32,8 @@
         <td>{{ prediction["cgm"]}} </td>
         <td>{{ prediction["cmd"]}} </td>
         <td>{{ prediction["healthy"]}}<td> 
-    </tr>
-
-     </tbody>
-     
-     
+      </tr>
+     </tbody>     
 {% endfor %}
 </table>
 {% endblock %}
