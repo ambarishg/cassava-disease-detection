@@ -19,6 +19,13 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 | 01-DockerSteps.md |   Steps for building the Docker Image        |
 |  02-AzureContainerAppsSteps.md | Steps for deploying the image as a Container App in Azure   |         
 
+## Images of the **Azure Container App**           
+|  FileName  |  Description |
+|---|---|
+| docs\images\ContainerApp\SystemIdentitySetting.png |    Images of the System identity configuration of the Container App which is turned ON            |   
+| docs\images\ContainerApp\StorageBlobDataContributorRole.png |     Images of the Storage Account  - Storage Data Blob Contributor Role             |       
+| docs\images\ContainerApp\KeyVaultAccess.png |    Key Vault - Access Polices to acess the Key Vault Secrets             |    
+
 ### Files     
 
 
@@ -34,12 +41,15 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 |  flaskr / templates folder | Folder containing the Views of the Container App   |        
 |  flaskr / static folder | Folder containing the CSS file   |     
 
-## Images     
+## Images of the **Cassava Disease Detection Application** 
 
 |  FileName  |  Description |
 |---|---|
-| docs\images\CassavaDiseaseApplication folder |    Contains the Images of the Cassava Application          |     
-| docs\images\ContainerApp folder |    Contains the Images of the Container App Configuration with (1). Storage Account  - Storage Data Blob Contributor Role (2). Key Vault - Access Polices to acess the Key Vault Secrets (3) System identity configuration of the Container App which is turned ON            | 
+| docs\images\CassavaDiseaseApplication\Predict.png  |    Prediction UI - Cassava Application          |     
+| docs\images\CassavaDiseaseApplication\PredictionResult.png  |    Prediction Result - Cassava Application          |     
+| docs\images\CassavaDiseaseApplication\Predict.png  |    All Predictions - Cassava Application          |     
+| docs\images\CassavaDiseaseApplication\Predict.png  |    Search Predictions by Filename - Cassava Application          |     
+          
 
 
 
