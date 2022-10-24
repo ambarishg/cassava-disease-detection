@@ -11,5 +11,28 @@ As the 2nd largest provider of carbohydrates in Africa, cassava is a key food se
 We have taken 105 images for 4 leaf disease categories and a healthy category. Therefore, we have 5 categories of leaves.            
 The Cassava Leaf Disease detection system would help the farmers to detect the disease correctly and take preventive measures for the same.       
 
-### Successful predictions
-image.png
+### Deployment Instructions     
+
+
+|  FileName  |  Description |
+|---|---|
+| 01-DockerSteps.md |   Steps for building the Docker Image        |
+|  02-AzureContainerAppsSteps.md | Steps for deploying the image as a Container App in Azure   |         
+
+### Files     
+
+
+|  FileName  |  Description |
+|---|---|
+| Dockerfile |   Docker file for the Container Image        |       
+| requirements.txt |   Has the dependencies required for the Container Image        |        
+| cosmosdbwithoutasync.py |   Has the code for connecting the Container App with CosmosDB        |        
+|  kvutils.py | Has the code for reading the secrets from the KeyVault by the Container App   |          
+|  predictions.py | Has the code for getting the predictions for the Cassava Leaf by the Container App   |      
+|  __init__.py | Has the code for initialization for the Flask App |      
+|  app.py | Has the code for running the Flask app |      
+|  templates folder | Folder containing the Views of the Container App   |        
+|  static folder | Folder containing the CSS file   |        
+
+
+
