@@ -78,4 +78,31 @@ def get_all_items():
         allitems.append(item)
     
     return(allitems)
+
+def get_items(qry):
+    # <add_uri_and_key>
+    endpoint = kvutils.cosmosdb_endpoint 
+    key = kvutils.cosmosdb_key 
+    # </add_uri_and_key>
+
+    # <define_database_and_container_name>
+    database_name = kvutils.cosmosdb_database_name 
+    container_name = kvutils.cosmosdb_container_name 
+    # </define_database_and_container_name>
+    client = cosmos_client(endpoint, credential = key) 
+
+    database_obj = get_or_create_db(client, database_name)
+    # create a container
+    container_obj = get_or_create_container(database_obj, container_name)
+     
+    querystring = 'SELECT * FROM c' + \
+        ' WHERE c.filename LIKE '' + \
+        qry + ''' +' ORDER BY c._ts DESC' 
+        
+    allitems = []
+    for item in container_obj.query_items(
+    query=querystring,enable_cross_partition_query=True):
+        allitems.append(item)
+    
+    return(allitems)
             

@@ -72,8 +72,13 @@ def predict():
 def index():
     return render_template('predictions/index.html')
 
-@bp.route('/allitems')
+@bp.route('/allitems', methods=('GET', 'POST'))
 def allitems():
+
+    if request.method == 'POST':
+        qry =  request.form["filename"]
+        results = cosmosdbwithoutasync.get_items(qry)
+        return render_template('predictions/allitems.html',allitems = results)
    
     results = cosmosdbwithoutasync.get_all_items()
     return render_template('predictions/allitems.html',allitems = results)
