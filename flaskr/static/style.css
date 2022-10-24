@@ -50,9 +50,7 @@ thead {
 	letter-spacing: 2%;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #fff;
-}
+
 
 tbody th {
   background-color: #36c;
@@ -62,4 +60,8 @@ tbody th {
 
 tbody tr:nth-child(even) th {
   background-color: #25c;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
 }
