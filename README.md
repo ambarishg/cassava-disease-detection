@@ -11,14 +11,15 @@ As the 2nd largest provider of carbohydrates in Africa, cassava is a key food se
 We have taken 105 images for 4 leaf disease categories and a healthy category. Therefore, we have 5 categories of leaves.            
 The Cassava Leaf Disease detection system would help the farmers to detect the disease correctly and take preventive measures for the same.       
 
-### Deployment Instructions     
-Step 1 : Steps for building the Docker Image [ 01-DockerSteps.md ]   
-Step 2 : Steps for deploying the image as a Container App in Azure [ AzureContainerAppsSteps.md ]  
-Step 3 : Turn the Managed identity [System Assigned] for the deployed Container App     
-Step 4 : Create the Storage Account and the Container       
-Step 5 : Create the CosmosDB account , database and container. The partition of the container is **category**               
-Step 6 : Assign Storage Data Blob Contributor Role to the Container App  for the Storage Account so that the Container App can read,write and delete the images in the Storage Account                   
-Step 7 : Assign Access Policies for the Container App so that the Container App can acess the secrets in the KeyVault
+### Deployment Instructions [ Steps ]     
+1.  Steps for building the Docker Image [ 01-DockerSteps.md ]   
+2.  Steps for deploying the image as a Container App in Azure [ AzureContainerAppsSteps.md ]  
+3.  Turn the Managed identity [System Assigned] for the deployed Container App     
+4.  Create the Storage Account and the Container       
+5.  Create the CosmosDB account , database and container. The partition of the container is **category**               
+6. Assign Storage Data Blob Contributor Role to the Container App  for the Storage Account so that the Container App can read,write and delete the images in the Storage Account                   
+7. Assign Access Policies for the Container App so that the Container App can acess the secrets in the KeyVault
+8. Create the secrets in the KeyVault   
 
 ## Images of the **Azure Container App**           
 |  FileName  |  Description |
