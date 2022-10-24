@@ -25,7 +25,9 @@ def predict():
     if request.method == 'POST':
         local_file_name =  request.files["filename"].filename
         bytes_data = request.files["filename"].read()
-        
+
+        full_file_name = account_url + "/" + container_name + "/" + local_file_name
+                
         credential = kvutils.credential
         account_url = kvutils.account_url 
         container_name = kvutils.container_name 
@@ -61,7 +63,8 @@ def predict():
 
         return render_template('predictions/index.html',
         filename = local_file_name,
-        predictionresults = results.predictions)
+        predictionresults = results.predictions,
+        fullfilename = full_file_name)
 
     return render_template('predictions/predict.html')
 
