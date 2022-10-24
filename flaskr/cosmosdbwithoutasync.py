@@ -96,8 +96,7 @@ def get_items(qry):
     container_obj = get_or_create_container(database_obj, container_name)
      
     querystring = 'SELECT * FROM c' + \
-        ' WHERE c.filename LIKE '' + \
-        qry + ''' +' ORDER BY c._ts DESC' 
+        ' WHERE c.filename LIKE '' +  qry + '''  
         
     allitems = []
     for item in container_obj.query_items(
