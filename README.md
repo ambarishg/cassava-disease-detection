@@ -26,20 +26,20 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 |---|---|
 | Dockerfile |   Docker file for the Container Image        |       
 | requirements.txt |   Has the dependencies required for the Container Image        |        
-| cosmosdbwithoutasync.py |   Has the code for connecting the Container App with CosmosDB        |        
-|  kvutils.py | Has the code for reading the secrets from the KeyVault by the Container App   |          
-|  predictions.py | Has the code for getting the predictions for the Cassava Leaf by the Container App   |      
-|  __init__.py | Has the code for initialization for the Flask App |      
-|  app.py | Has the code for running the Flask app |      
-|  templates folder | Folder containing the Views of the Container App   |        
-|  static folder | Folder containing the CSS file   |     
+|  app.py | Has the code for running the Flask app |    
+| flaskr / cosmosdbwithoutasync.py |   Has the code for connecting the Container App with **CosmosDB**        |        
+|  flaskr / kvutils.py | Has the code for reading the secrets from the **KeyVault** by the Container App   |          
+|  flaskr / predictions.py | Has the code for getting the **predictions** for the Cassava Leaf by the Container App   |      
+|  flaskr / __init__.py | Has the code for initialization for the **Flask** App |      
+|  flaskr / templates folder | Folder containing the Views of the Container App   |        
+|  flaskr / static folder | Folder containing the CSS file   |     
 
 ## Images     
 
 |  FileName  |  Description |
 |---|---|
 | docs\images\CassavaDiseaseApplication folder |    Contains the Images of the Cassava Application          |     
-| docs\images\ContainerApp folder |    Contains the Images of the Container App Configuration with (1). Storage Account  - Storage Data Blob Contributor Role .(2). Key Vault - Access Polices to acess the Key Vault Secrets           | 
+| docs\images\ContainerApp folder |    Contains the Images of the Container App Configuration with (1). Storage Account  - Storage Data Blob Contributor Role (2). Key Vault - Access Polices to acess the Key Vault Secrets (3) System identity configuration of the Container App which is turned ON            | 
 
 
 
