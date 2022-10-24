@@ -74,7 +74,7 @@ def get_all_items():
 
     allitems = []
     for item in container_obj.query_items(
-    query='SELECT * FROM predictions',enable_cross_partition_query=True):
+    query='SELECT * FROM c ORDER BY c._ts DESC',enable_cross_partition_query=True):
         allitems.append(item)
     
     return(allitems)
