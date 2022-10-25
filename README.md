@@ -29,7 +29,7 @@ The images are in the `docs\images\ContainerApp\` folder
 3.  Steps for deploying the image as a Container App in Azure [ `docs/2-AzureContainerAppsSteps.md` ]  
 4.  Turn the Managed identity [System Assigned] for the deployed Container App[ `docs\images\ContainerApp\SystemIdentitySetting.png` ]        
 5.  Create the Storage Account and the Container   [ `docs\images\StorageAccount\StorageAccount.png`]       
-6.  Create the CosmosDB account , database and container. The partition of the container is **category**                
+6.  Create the CosmosDB account , database and container. The partition of the container is **category** [`Section : Images of the Cosmos DB`]               
 7. Assign Storage Data Blob Contributor Role to the Container App  for the Storage Account so that the Container App can read,write and delete the images in the Storage Account [ `docs\images\ContainerApp\StorageBlobDataContributorRole.png` ]                           
 8. Assign Access Policies for the Container App so that the Container App can acess the secrets in the KeyVault[ `docs\images\ContainerApp\KeyVaultAccess.png` ]                          
 9. Create the secrets in the KeyVault[ `docs\images\KeyVault\KVSecrets.png`]     
