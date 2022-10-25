@@ -22,12 +22,19 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 8. Assign Access Policies for the Container App so that the Container App can acess the secrets in the KeyVault
 9. Create the secrets in the KeyVault   
 
-## Images of the **Azure Container App**           
-|  FileName  |  Description |
-|---|---|
-| docs\images\ContainerApp\SystemIdentitySetting.png |    Images of the System identity configuration of the Container App which is turned ON            |   
-| docs\images\ContainerApp\StorageBlobDataContributorRole.png |     Images of the Storage Account  - Storage Data Blob Contributor Role             |       
-| docs\images\ContainerApp\KeyVaultAccess.png |    Key Vault - Access Polices to acess the Key Vault Secrets             |    
+## Images of the **Azure Container App**          
+The images are in the `docs\images\ContainerApp\` folder     
+
+| Category |  FileName  |  Description |
+|---|---|---|
+| Managed Identity | SystemIdentitySetting.png |    Images of the System identity configuration of the Container App which is turned ON            |   
+| Storage account Access | StorageBlobDataContributorRole.png |     Images of the Storage Account  - Storage Data Blob Contributor Role             |       
+| KeyVault Access | KeyVaultAccess.png |    Key Vault - Access Polices to acess the Key Vault Secrets             |      
+| RevisionManagement - Container App | RevisionManagement.png  |    Revision Management Settings   - Container App         |     
+| Scale - Container App | Scale.png  |    Scale Settings   - Container App         |   
+| Secrets - Container App | Secrets.png  |    Secrets Settings   - Container App. The KeyVault Name is stored as a Secret         |   
+| Continuous Deployment - Container App | CD.png  |    Continuous Deployment Settings   - Container App.          |   
+
 
 ### Files     
 
@@ -45,13 +52,16 @@ The Cassava Leaf Disease detection system would help the farmers to detect the d
 |  flaskr / static folder | Folder containing the CSS file   |     
 
 ## Images of the **Cassava Disease Detection Application** 
+    
+The images are in the `docs\images\ContainerApp\` folder     
 
 |  FileName  |  Description |
 |---|---|
-| docs\images\CassavaDiseaseApplication\Predict.png  |    Prediction UI - Cassava Application          |     
-| docs\images\CassavaDiseaseApplication\PredictionResult.png  |    Prediction Result - Cassava Application          |     
-| docs\images\CassavaDiseaseApplication\Predict.png  |    All Predictions - Cassava Application          |     
-| docs\images\CassavaDiseaseApplication\Predict.png  |    Search Predictions by Filename - Cassava Application          |     
+| Predict.png  |    Prediction UI - Cassava Application          |     
+| PredictionResult.png  |    Prediction Result - Cassava Application          |     
+| AllPredictions.png  |    All Predictions - Cassava Application          |     
+| FilterPredictions.png  |    Search Predictions by Filename - Cassava Application          |    
+ 
           
 
 
