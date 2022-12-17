@@ -74,7 +74,8 @@ def get_all_items():
 
     allitems = []
     for item in container_obj.query_items(
-    query='SELECT * FROM c ORDER BY c._ts DESC',enable_cross_partition_query=True):
+    query="SELECT * FROM c WHERE c.category = 'cassava' ORDER BY c._ts DESC",
+    enable_cross_partition_query=True):
         allitems.append(item)
     
     return(allitems)
@@ -95,7 +96,7 @@ def get_items(qry):
     # create a container
     container_obj = get_or_create_container(database_obj, container_name)
      
-    querystring = "SELECT * FROM c WHERE c.filename LIKE '%" +  qry + "%'"
+    querystring = "SELECT * FROM c WHERE  c.category = 'cassava' AND c.filename LIKE '%" +  qry + "%'"
         
     allitems = []
     for item in container_obj.query_items(

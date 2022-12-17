@@ -33,7 +33,7 @@ def predict():
     credential=credential)
         blob_client = blob_service_client.get_blob_client(container=container_name, 
         blob=local_file_name)
-        blob_client.upload_blob(bytes_data)
+        blob_client.upload_blob(bytes_data,overwrite = True)
 
         full_file_name = account_url + "/" + container_name + "/" + local_file_name
 

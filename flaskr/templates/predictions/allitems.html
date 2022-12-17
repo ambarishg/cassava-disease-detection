@@ -35,18 +35,20 @@
     <th>healthy</th>
     </tr>
     </thead>
-  
+    
+<tbody> 
 {% for prediction in allitems %}
-     <tbody>
+     
       <tr>
         <td>{{ prediction["filename"]}} </td> 
         <td>{{ prediction["cbb"]}} </td> 
         <td>{{ prediction["cbsd"]}} </td>
         <td>{{ prediction["cgm"]}} </td>
         <td>{{ prediction["cmd"]}} </td>
-        <td>{{ prediction["healthy"]}}<td> 
+        <td>{{ prediction["healthy"]}}</td> 
       </tr>
-     </tbody>     
+         
 {% endfor %}
+</tbody> 
 </table>
 {% endblock %}
